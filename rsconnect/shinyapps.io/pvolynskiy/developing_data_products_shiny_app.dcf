@@ -1,0 +1,12 @@
+name: developing_data_products_shiny_app
+title: Developing Data Products Shiny App
+username:
+account: pvolynskiy
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 224827
+bundleId: 1024988
+url: https://pvolynskiy.shinyapps.io/developing_data_products_shiny_app/
+when: 1507895958.79436
+asMultiple: FALSE
+asStatic: FALSE

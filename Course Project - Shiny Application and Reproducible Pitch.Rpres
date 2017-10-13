@@ -1,0 +1,77 @@
+Course Project - Shiny Application and Reproducible Pitch
+========================================================
+author: 
+date: 13 October 2017 
+autosize: true
+transition: rotate
+
+Project description
+========================================================
+
+This is a part of the final course project for Developing Data Products Course"
+
+It contains two parts:
+- Develop of the Shiny App which can be found at <br> 
+<a href="https://pvolynskiy.shinyapps.io/developing_data_products_shiny_app" target="_blank ">Application</a>
+- Reproducable Pitch which is the presentation you see now  
+
+Code for both Shiny Application and Presentation can be found at github:<br>
+<a href="https://github.com/peter-cmw/developing-data-projects-shiny-app" target="_blank">GitHub repo</a>
+
+
+Shiny App Description - UI
+========================================================
+
+Application is a product that allow user to use various models to predict iris species using as oredictors petal width and petal length
+
+UI allows user to choose a model and predictor values. 
+Output is shown in the plot that contains data from iris dataset <a target = "_blank" href="https://archive.ics.uci.edu/ml/datasets/iris">https://archive.ics.uci.edu/ml/datasets/iris</a> and predicted values.
+
+Code for the application can be found at github.
+
+Shiny App Description - Example Code
+========================================================
+
+Here is the example of code a particular prediction based on a particular model
+```{r, eval=FALSE}
+trainedModel <- train(Species ~ Petal.Length+Petal.Width, data=iris, method="LMT")
+
+prediction <- predict(trainedModel, newdata = data.frame(Petal.Width = 2, Petal.Length = 1.5))
+
+#plot output
+irisPlot <-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, colour=Species)) + 
+      geom_point(size=2) + 
+      geom_point(aes(x=1.5, y=2, colour=prediction), size=6, pch=8)
+
+```
+
+Shiny App Description - Example result
+========================================================
+```{r irisPlot, echo=FALSE, fig.width=16, fig.height=9}
+library(caret);
+library(ggplot2);
+library(datasets)
+library(randomForest)
+library(rpart)
+library(e1071)
+
+
+trainedModel <- train(Species ~ Petal.Length+Petal.Width, data=iris, method="rpart")
+
+prediction <- predict(trainedModel, newdata = data.frame(Petal.Width = 2, Petal.Length = 1.5))
+```
+```{r, echo=FALSE}
+#plot output
+irisPlot <-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, colour=Species)) + 
+      geom_point(size=2) + 
+      geom_point(aes(x=1.5, y=2, colour=prediction), size=6, pch=8)
+```
+Predicted species is: `r prediction`
+```{r, echo=TRUE}
+
+```
+
+```{r, echo=FALSE, , fig.width=16, fig.height=9}
+irisPlot
+```
+

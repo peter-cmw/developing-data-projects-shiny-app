@@ -1,9 +1,14 @@
 library(shiny)
 library(caret)
 library(ggplot2)
+library(datasets)
 library(RWeka)
+library(randomForest)
+library(rpart)
+library(e1071)
 shinyServer(function(input, output) {
-  
+
+  data(iris)  
   model1 <- reactive({
       mdl <- train(Species ~ Petal.Length+Petal.Width, data=iris, method=input$model)
       mdl$MdlName = input$model

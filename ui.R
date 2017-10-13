@@ -6,6 +6,7 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
       p("Choose model from dropdown and select petal width and length to predict spiece on"),
+      p("Please give server some time to train model before results will show up"),
       selectInput("model", "Model:",
                     c("Random Forest (rf)" = "rf",
                       "Logistic Model Trees" = "LMT",

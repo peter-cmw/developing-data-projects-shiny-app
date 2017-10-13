@@ -1,0 +1,13 @@
+name: shiny_app
+title: Shiny App
+username:
+account: pvolynskiy
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 224867
+bundleId: 1025123
+url: https://pvolynskiy.shinyapps.io/shiny_app/
+when: 1507901142.59853
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Course Project - Shiny Application and Reproducible Pitch-rpubs.html|Course Project - Shiny Application and Reproducible Pitch.md|Course Project - Shiny Application and Reproducible Pitch.Rpres|Course Project - Shiny Application and Reproducible Pitch-figure/unnamed-chunk-2-1.png|Course Project - Shiny Application and Reproducible Pitch-figure/unnamed-chunk-3-1.png|Course Project - Shiny Application and Reproducible Pitch-figure/unnamed-chunk-4-1.png
